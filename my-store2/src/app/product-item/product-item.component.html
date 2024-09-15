@@ -1,0 +1,25 @@
+<div class="product-container" >
+    <li class="product-image">
+      <img src="{{ product.url }}" alt="Product Image">
+      <a (click)="navigateToDetailsPage()" class="product-link">{{product.name}}</a>
+      <p>${{product.price}}</p>
+  
+      <select class="select-input" [(ngModel)]="selectedAmount" (ngModelChange)="onAmountChange($event)">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <br>
+      
+      
+      <button class="btn btn-primary" *ngIf="product" (click)="addToCart(product)">Add to cart</button>
+    </li>
+  </div>
+  

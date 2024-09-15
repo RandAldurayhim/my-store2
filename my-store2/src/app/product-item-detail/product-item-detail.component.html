@@ -1,0 +1,46 @@
+<div class="main-container">
+    <div class="detail-container">
+    
+              <div class="detail-item">
+                <img src="{{product?.url}}"  alt="Product Image">
+         </div>
+    </div>
+    <div class="detail-container">
+      
+          <div class="detail-item">
+    
+          <p>{{product?.name}}</p>
+          </div>
+          <div class="detail-item">
+    
+          <p>${{product?.price}}</p>
+          </div>
+          <div class="detail-item">
+    
+          <p>{{product?.description}}</p>
+          </div>
+          <div class="detail-item">
+    
+          <select class="select-input" [(ngModel)]="selectedAmount" (ngModelChange)="onAmountChange($event)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          </div>
+          <div class="detail-item">
+    
+      <button class="btn btn-primary" *ngIf="product" (click)="addToCart(product)">Add to cart</button>
+          </div>
+          <div class="detail-item">
+      
+          <a routerLink="/" class="back-link">&larr; Back to product list</a>
+        </div>
+      </div>
+    </div>
