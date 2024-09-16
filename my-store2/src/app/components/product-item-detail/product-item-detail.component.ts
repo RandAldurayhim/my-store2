@@ -13,7 +13,7 @@ import { CartService } from '../../services/cart/cart.service';
 })
 export class ProductItemDetailComponent implements OnInit{
   product:Product|null = null;  
-  selectedAmount: number = 1; 
+  selectedAmount = 1; 
   
   onAmountChange(selectedAmount: number) {
     console.log('Selected amount:', selectedAmount);

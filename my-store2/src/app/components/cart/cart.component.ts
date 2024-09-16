@@ -10,10 +10,10 @@ import { CartService } from '../../services/cart/cart.service';
 }
 )
 export class CartComponent implements OnInit {
-  fname: string='';
-  address: string='';
-  creditCard: string='';
-  totalPrice: number=0;
+  fname = '';
+  address = '';
+  creditCard = '';
+  totalPrice = 0;
   constructor(private router:Router ,  private cartService : CartService) {}
   cartList: CartItem[]=[];
 

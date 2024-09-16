@@ -9,7 +9,7 @@
       </div>
     </div>
   
-    <div class="form-container" *ngIf="cartList.length != 0" >
+    <div class="form-container" *ngIf="cartList.length !== 0" >
       <form #form="ngForm" (ngSubmit)="onSubmit()">
         <label for="fname" class="form-margin">Full name:</label><br>
         <input (change)="updateName(fname)" minLength="3" placeholder="(minimum 3 characters)" class="form-margin" required type="text" id="fname"  
@@ -29,4 +29,4 @@
     <p>Your cart is empty.</p>
   </div>
   
-  <p *ngIf="cartList.length != 0"  class="total-amount">Total: ${{ totalPrice | number:'1.2-2' }}</p>
+  <p *ngIf="cartList.length !== 0"  class="total-amount">Total: ${{ totalPrice | number:'1.2-2' }}</p>

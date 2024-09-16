@@ -6,11 +6,10 @@ import { CartItem } from '../../../../models/cart-item';
 })
 export class CartService {
 
-  constructor() { }
-  private name: string= '';
-  private address:string='';
-  private creditCard:string='';
-  private totalPrice: number= 0;
+  private name = '';
+  private address = '';
+  private creditCard = '';
+  private totalPrice = 0;
   private cart: CartItem[] = [];
 
   setName(name:string){

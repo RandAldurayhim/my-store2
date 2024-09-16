@@ -12,7 +12,7 @@ import { CartService } from '../../services/cart/cart.service';
 })
 export class ProductItemComponent {
   @Input() product: Product = new Product(0, '', 0, '', '');
-  selectedAmount: number = 1;
+  selectedAmount = 1;
 
   onAmountChange(selectedAmount: number) {
     console.log('Selected amount:', selectedAmount);

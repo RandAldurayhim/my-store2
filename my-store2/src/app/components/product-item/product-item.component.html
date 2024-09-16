@@ -1,7 +1,7 @@
 <div class="product-container" >
     <li class="product-image">
       <img src="{{ product.url }}" alt="Product Image">
-      <a (click)="navigateToDetailsPage()" class="product-link">{{product.name}}</a>
+      <a (click)="navigateToDetailsPage()" class="product-link" (keyup.enter)="addToCart(product)"  tabindex="0" >{{product.name}}</a>
       <p>${{product.price}}</p>
   
       <select class="select-input" [(ngModel)]="selectedAmount" (ngModelChange)="onAmountChange($event)">
