@@ -1,5 +1,5 @@
 <div class="fullWidth">
     <div class="product-index">
-      <app-product-item   class="product-container" *ngFor="let product of productList" [product]="product"></app-product-item>
+      <app-product-item   class="product-container" *ngFor="let product of productList" [product]="product" (addedProduct)="addedProduct($event)"></app-product-item>
     </div>
 </div>

@@ -59,3 +59,15 @@ img {
     font-size: 0.8rem;  
     color: #888; 
   }
+  .error-message {
+    font-size: 0.8rem;  
+    color: red;
+    font-weight: bold;
+  }
+  /* input:valid {
+    background-color: palegreen;
+  }
+  
+  input:invalid {
+    background-color: lightpink;
+  } */

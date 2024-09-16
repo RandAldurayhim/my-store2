@@ -35,7 +35,14 @@ onSubmit():void{
 
 
 updateCartItem(cartItem: CartItem) {
-  if (isNaN(cartItem.amount) || cartItem.amount < 1) {
+  if (cartItem.amount === 0) {
+    this.cartService.removeFromCart(cartItem.id);
+    this.cartList = this.cartList.filter(item => item.id !== cartItem.id);
+    this.totalPrice = this.cartList.reduce((acc, item) => acc + (item.price * item.amount), 0);
+    alert("Item removed from cart!");
+    return;
+  }
+  else if (isNaN(cartItem.amount) || cartItem.amount < 1) {
     cartItem.amount = 1;
   } else {
     cartItem.amount = Math.floor(cartItem.amount);
@@ -45,14 +52,33 @@ updateCartItem(cartItem: CartItem) {
   this.totalPrice = this.cartList.reduce((acc, item) => acc + (item.price * item.amount), 0);
 }
 updateName(fname: string) {
-  this.cartService.setName(fname);
+  if (this.validateName(fname)) {
+    this.cartService.setName(fname);
+  }
 }
 
 updateAddress(address: string) {
-  this.cartService.setAddress(address);
+  if (this.validateAddress(address)) {
+    this.cartService.setAddress(address);
+  }
 }
 
 updateCreditCard(creditCard: string) {
-  this.cartService.setCreditCard(creditCard);
+  if (this.validateCreditCard(creditCard)) {
+    this.cartService.setCreditCard(creditCard);
+  }
 }
+
+private validateName(name: string): boolean {
+  return name.length >= 3;
+}
+
+private validateAddress(address: string): boolean {
+  return address.length >= 6;
+}
+
+private validateCreditCard(creditCard: string): boolean {
+  return creditCard.length === 16 && !isNaN(Number(creditCard));
+}
+
 }

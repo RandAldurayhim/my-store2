@@ -1,8 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../../../models/product';
 import { Router } from '@angular/router';
 import { CartItem } from '../../../../models/cart-item';
-import { CartService } from '../../services/cart/cart.service';
 
 
 @Component({
@@ -12,23 +11,23 @@ import { CartService } from '../../services/cart/cart.service';
 })
 export class ProductItemComponent {
   @Input() product: Product = new Product(0, '', 0, '', '');
+  @Output() addedProduct: EventEmitter<CartItem> = new EventEmitter();
   selectedAmount = 1;
 
   onAmountChange(selectedAmount: number) {
     console.log('Selected amount:', selectedAmount);
   }
   addToCart(product: Product) {
-    const cartService = this.cartService;
     if (product !== null) {
       const selectedProduct = new CartItem(product, this.selectedAmount);
-      cartService.addToCart(selectedProduct);
+      this.addedProduct.emit(selectedProduct);
+      alert("Item added to cart!");
       this.router.navigate(['/cart']);
     }
   }
 
   constructor(
     private router: Router,
-    private cartService: CartService,
   ) {}
 
   navigateToDetailsPage() {

@@ -11,7 +11,7 @@ import { CartService } from '../../services/cart/cart.service';
   templateUrl: './product-item-detail.component.html',
   styleUrl: './product-item-detail.component.css'
 })
-export class ProductItemDetailComponent implements OnInit{
+export class ProductItemDetailComponent implements OnInit {
   product:Product|null = null;  
   selectedAmount = 1; 
   
@@ -25,17 +25,19 @@ export class ProductItemDetailComponent implements OnInit{
     if (product !== null) {
       const selectedProduct = new CartItem(product, this.selectedAmount);
       this.cartService.addToCart(selectedProduct);
+      alert("Item added to cart!");
       this.router.navigate(['/cart']);
     }
 
   }
          
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => { 
+    this.route.paramMap.subscribe(params => {
       const productId = parseInt(params.get('id')!);
-      if (productId){
-        this.product = this.productService.getProductById(productId);
+      if (productId) {
+        this.product = this.productService.getProductById(productId) ?? null;
       }
     });
   }
+
 }
