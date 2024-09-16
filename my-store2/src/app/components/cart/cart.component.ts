@@ -38,9 +38,7 @@ updateCartItem(cartItem: CartItem) {
   if (cartItem.amount === 0) {
     this.cartService.removeFromCart(cartItem.id);
     this.cartList = this.cartList.filter(item => item.id !== cartItem.id);
-    this.totalPrice = this.cartList.reduce((acc, item) => acc + (item.price * item.amount), 0);
     alert("Item removed from cart!");
-    return;
   }
   else if (isNaN(cartItem.amount) || cartItem.amount < 1) {
     cartItem.amount = 1;
