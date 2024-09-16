@@ -5,6 +5,9 @@
           <h3>{{cartItem.name}}</h3>
           <p>${{cartItem.price}}</p>
           <p>Amount: <input type="number" class="number-input" min="0" step="1"  [(ngModel)]="cartItem.amount"  (change)="updateCartItem(cartItem)"></p>
+          <button class="btn btn-danger btn-sm" (click)="removeCartItem(cartItem)">
+            <i class="fa fa-trash"></i> Remove
+          </button>
         </div>
       </div>
     </div>
