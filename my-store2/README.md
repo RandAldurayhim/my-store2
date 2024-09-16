@@ -1,6 +1,20 @@
-# MyStore2
+# My Store Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+This application streamlines your online shopping experience:
+
+* Browse a wide variety of products with images, names, and prices.
+* View detailed product information to make informed choices.
+* Choose the quantity you need for each item and add them to your cart effortlessly.
+* Manage your cart by viewing all items, adjusting quantities, and seeing the total cost.
+* Complete your purchase by entering your details (simulated checkout).
+* Receive confirmation with your order details and estimated delivery time.
+
+## Easy Navigation:
+
+* Use the navigation bar to seamlessly switch between the product list and your cart.
+
+# Development and Testing
+
 
 ## Development server
 
