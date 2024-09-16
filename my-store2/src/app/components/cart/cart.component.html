@@ -17,7 +17,7 @@
         <label for="address" class="form-margin">Address:</label><br>
         <input (change)="updateAddress(address)" [(ngModel)]="address" required type="text" id="address" name="address" minlength="6" placeholder="(minimum 6 characters)" class="form-margin"><br>
         <label for="creditCard" class="form-margin">Credit card number:</label><br>
-        <input (change)="updateCreditCard(creditCard)" [(ngModel)]="creditCard" required type="text" id="creditCard" name="creditCard" minlength="16" maxlength="16" placeholder="(16-digit number)" class="form-margin"><br><br>
+        <input (change)="updateCreditCard(creditCard)" [(ngModel)]="creditCard" required type="text" id="creditCard" name="creditCard" minlength="16" maxlength="16" placeholder="(16-digit number)" class="form-margin" pattern="\d{16}" ><br><br>
         <p class="payment-info">We'll never share your payment details with anyone else.</p>
         <button  class="btn btn-primary" [disabled]="form.invalid || cartList.length === 0"
         type="submit">Submit</button>
